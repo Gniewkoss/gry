@@ -40,7 +40,7 @@ label {
 
 input,
 textarea {
-  @apply block w-full px-3 py-2 border rounded border-neutral-950;
+  @apply block w-full px-3 py-2 border rounded border-neutral-950 text-black;
 }
 
 @layer utilities {
