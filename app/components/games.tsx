@@ -1,10 +1,26 @@
+"use client";
+import Box from "@mui/material/Box";
+import Rating from "@mui/material/Rating";
+import Typography from "@mui/material/Typography";
+import React from "react";
+
 export default function Games() {
+  const [value, setValue] = React.useState<number | null>(2);
+
   return (
-    <div className=" grid grid-cols-3">
+    <div className=" grid grid-cols-3 sm:grid-cols-1 md:grid-cols-2 lg:grid-cols-3">
       <div className=" bg-stone-500 rounded-2xl p-4 m-3">
         <h2>GTA</h2>
+        <p>Rate game:</p>
+        <Rating
+          name="simple-controlled"
+          value={value}
+          onChange={(event, newValue) => {
+            setValue(newValue);
+          }}
+        />
         <img
-          className=" w-96 h-40 object-cover rounded-lg shado"
+          className=" w-max object-cover rounded-lg shado"
           src="https://cdn1.epicgames.com/0584d2013f0149a791e7b9bad0eec102/offer/GTAV_EGS_Artwork_2560x1440_Landscaped%20Store-2560x1440-79155f950f32c9790073feaccae570fb.jpg"
           alt=""
         />
@@ -16,10 +32,11 @@ export default function Games() {
 
         <h3>Rockstar games</h3>
       </div>
+
       <div className=" bg-stone-500 rounded-2xl p-4 m-3">
         <h2>Wiedzmin</h2>
         <img
-          className=" w-96 h-40 object-cover rounded-lg shado"
+          className=" w-max object-cover rounded-lg shado"
           src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQn4EOWTIdhoNPxU5QGYCToM5ZLXBBWfM8c6zDZI7uD2A&s"
           alt=""
         />
